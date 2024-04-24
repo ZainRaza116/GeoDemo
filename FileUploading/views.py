@@ -68,6 +68,8 @@ def getFeedbackMessage(value):
         return "Love"
 
 def feedback(request):
+    feed = Feedback.objects.all()
+    print(feed)
     if request.method == 'POST':
         demo_rating_value = int(request.POST.get('demo_rating', 4))
         subject = request.POST.get('subject', '')
